@@ -5,3 +5,8 @@ we upload the resume text through  web interface or by using webhook api using p
 after analyzing the project will give important details like : candidate name, skills and year of experience.
 Limitations:pdf cannot be uploaded, no database is used.
 later you can integrate it with these features.
+
+Language: Python
+Framework: Flask
+Tools: VS Code, Postman, Chatgpt, Gemini
+Designing:HTML, CSS
