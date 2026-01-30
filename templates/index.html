@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Resume Analyzer</h2>
+    <p class="subtitle">Extract data instantly using Hybrid AI & Regex</p>
+
+    <form method="POST">
+        <textarea name="resume_text" placeholder="Paste the candidate's professional summary or full resume here..." required></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Extracted Insights</h3>
+        <div class="data-point">
+            <span class="label">Candidate:</span> {{ result.candidate_name }}
+        </div>
+        <div class="data-point">
+            <span class="label">Experience:</span> {{ result.years_of_experience }} Years
+        </div>
+        <div class="data-point">
+            <span class="label">Skills:</span> 
+            <span style="color: #fff; font-style: italic;">
+                {{ result.skills | join(', ') if result.skills else 'None detected' }}
+            </span>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
